@@ -14,8 +14,13 @@ public class Author {
     private Long id;
     private String firstName;
     private String lastName;
+
+
+
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
+
+
 
     public Set<Book> getBooks() {
         return books;
@@ -72,5 +77,13 @@ public class Author {
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
+    }
+    public Author() {
+
+    }
+
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 }
